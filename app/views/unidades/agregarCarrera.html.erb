@@ -1,0 +1,25 @@
+<%= form_tag(:action => 'agregarCarrera', :html => { :class => "form-horizontal unidad" }) do %>
+  <% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= label_tag :siglas, "Selecciona una carrera", :class => 'control-label' %>
+    <div class="field">
+      <%= select_tag "carrera_id", options_from_collection_for_select(@carreras, "url", "nombre"), :class => 'form-control' %>
+    </div>
+    <div class="controls">
+      <%=text_field_tag :siglas, nil, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:siglas]) %>
+  </div>
+
+ 
+      <%=  %>
+    @optionsCategoria = 
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 class UnidadesController < ApplicationController
-  before_action :set_unidad, only: [:show, :edit, :update, :destroy]
+  before_action :set_unidad, only: [:show, :edit, :update, :destroy, :agregarCarrera]
 
   # GET /unidades
   # GET /unidades.json
@@ -60,11 +60,13 @@ class UnidadesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def agregarCarrera
+    @carreras = Carrera.order(:nombre)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_unidad
-      @unidad = Unidad.find(params[:id])
+      @unidad = Unidad.find_by_siglas(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

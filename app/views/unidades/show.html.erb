@@ -1,64 +1,43 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Unidad -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @unidad.nombre %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @unidad.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:siglas) %>:</strong></dt>
+  <dd><%= @unidad.siglas %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @unidad.descripcion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+  <dd><%= @unidad.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
+  <dd><%= @unidad.direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefono) %>:</strong></dt>
+  <dd><%= @unidad.telefono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:extension) %>:</strong></dt>
+  <dd><%= @unidad.extension %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @unidad.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:web) %>:</strong></dt>
+  <dd><%= @unidad.web %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:escudo) %>:</strong></dt>
+  <dd><%= @unidad.escudo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:portada) %>:</strong></dt>
+  <dd><%= @unidad.portada %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:token) %>:</strong></dt>
+  <dd><%= @unidad.token %></dd>
+</dl>
 
-<p>
-  <strong>Siglas:</strong>
-  <%= @unidad.siglas %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @unidad.descripcion %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @unidad.url %>
-</p>
-
-<p>
-  <strong>Direccion:</strong>
-  <%= @unidad.direccion %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @unidad.telefono %>
-</p>
-
-<p>
-  <strong>Extension:</strong>
-  <%= @unidad.extension %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @unidad.email %>
-</p>
-
-<p>
-  <strong>Web:</strong>
-  <%= @unidad.web %>
-</p>
-
-<p>
-  <strong>Escudo:</strong>
-  <%= @unidad.escudo %>
-</p>
-
-<p>
-  <strong>Portada:</strong>
-  <%= @unidad.portada %>
-</p>
-
-<p>
-  <strong>Secure token:</strong>
-  <%= @unidad.token %>
-</p>
-
-<%= link_to 'Edit', edit_unidad_path(@unidad) %> |
-<%= link_to 'Back', unidades_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              unidades_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_unidad_path(@unidad), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              unidad_path(@unidad),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+<%= link_to t('.agregarCarrera', :default => t("helpers.links.agregarCarrera")),
+              agregarCarrera_path(@unidad), :class => 'btn btn-default' %>

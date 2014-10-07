@@ -1,65 +1,108 @@
-<%= form_for(@unidad) do |f| %>
-  <% if @unidad.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@unidad.errors.count, "error") %> prohibited this unidad from being saved:</h2>
+<%= form_for @unidad, :html => { :class => "form-horizontal unidad" } do |f| %>
 
-      <ul>
-      <% @unidad.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @unidad.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@unidad.errors.count, "error") %> prohibited this unidad from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @unidad.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:nombre]) %>
   </div>
-  <div class="field">
-    <%= f.label :siglas %><br>
-    <%= f.text_field :siglas %>
+  <div class="control-group">
+    <%= f.label :siglas, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :siglas, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:siglas]) %>
   </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
+  <div class="control-group">
+    <%= f.label :descripcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descripcion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:descripcion]) %>
   </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+  <div class="control-group">
+    <%= f.label :url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :url, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:url]) %>
   </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    <%= f.text_field :direccion %>
+  <div class="control-group">
+    <%= f.label :direccion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:direccion]) %>
   </div>
-  <div class="field">
-    <%= f.label :telefono %><br>
-    <%= f.text_field :telefono %>
+  <div class="control-group">
+    <%= f.label :telefono, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:telefono]) %>
   </div>
-  <div class="field">
-    <%= f.label :extension %><br>
-    <%= f.text_field :extension %>
+  <div class="control-group">
+    <%= f.label :extension, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :extension, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:extension]) %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:email]) %>
   </div>
-  <div class="field">
-    <%= f.label :web %><br>
-    <%= f.text_field :web %>
+  <div class="control-group">
+    <%= f.label :web, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :web, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:web]) %>
   </div>
-  <div class="field">
-    <%= f.label :escudo %><br>
-    <%= f.text_field :escudo %>
+  <div class="control-group">
+    <%= f.label :escudo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :escudo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:escudo]) %>
   </div>
-  <div class="field">
-    <%= f.label :portada %><br>
-    <%= f.text_field :portada %>
+  <div class="control-group">
+    <%= f.label :portada, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :portada, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:portada]) %>
   </div>
-  <div class="field">
-    <%= f.label :token %><br>
-    <%= f.text_field :token %>
+  <div class="control-group">
+    <%= f.label :token, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :token, :class => 'form-control' %>
+    </div>
+    <%= error_span(@unidad[:token]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            unidades_path, :class => 'btn btn-default' %>
+
 <% end %>

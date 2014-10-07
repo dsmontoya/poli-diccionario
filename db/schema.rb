@@ -11,42 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002234034) do
+ActiveRecord::Schema.define(version: 20141005173605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carreras", force: true do |t|
+    t.string   "nombre"
+    t.string   "url"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "carreras_materias", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "carreras_unidades", id: false, force: true do |t|
+    t.integer "carrera_id"
+    t.integer "unidad_id"
   end
 
-  create_table "carreras_unidades", force: true do |t|
+  create_table "materias", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "profesores", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "profesores_materias", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "profesores_unidades", force: true do |t|
+    t.string   "nombres"
+    t.string   "apellidos"
+    t.string   "url"
+    t.string   "email"
+    t.integer  "sexo"
+    t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "unidades", force: true do |t|
+    t.string   "nombre"
+    t.string   "siglas"
+    t.text     "descripcion"
+    t.string   "url"
+    t.string   "direccion"
+    t.string   "telefono"
+    t.string   "extension"
+    t.string   "email"
+    t.string   "web"
+    t.string   "escudo"
+    t.string   "portada"
+    t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

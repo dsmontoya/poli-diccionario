@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :profesores
-
-  resources :carreras
-
-  resources :unidades
+  scope "/admin" do
+    resources :unidades, :materias, :carreras, :profesores
+    get 'unidades/:id/agregarCarrera' => 'unidades#agregarCarrera', :as => 'agregarCarrera'
+    resources :unidades do
+    end
+    get 'configuracion' => 'info_sitio#index', as: 'info_sitio'
+    patch 'configuracion' => 'info_sitio#update'
+  end
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
