@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Nombre:
+  = @materia.nombre
+%p
+  %strong Descripcion:
+  = @materia.descripcion
+= link_to 'Edit', edit_materia_path(@materia)
+|
+\#{link_to 'Back', materias_path}

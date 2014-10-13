@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   scope "/admin" do
     resources :unidades, :materias, :carreras, :profesores
     get 'unidades/:id/agregarCarrera' => 'unidades#agregarCarrera', :as => 'agregarCarrera'

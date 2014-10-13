@@ -1,0 +1,19 @@
+= form_for(@materia) do |f|
+  - if @materia.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@materia.errors.count, "error")
+        prohibited this materia from being saved:
+      %ul
+        - @materia.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :nombre
+    %br/
+    = f.text_field :nombre
+  .field
+    = f.label :descripcion
+    %br/
+    = f.text_area :descripcion
+  .actions
+    = f.submit

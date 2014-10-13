@@ -1,0 +1,70 @@
+- model_class = Unidad
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human.titleize
+%dl.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:nombre)
+      \:
+  %dd= @unidad.nombre
+  %dt
+    %strong
+      = model_class.human_attribute_name(:siglas)
+      \:
+  %dd= @unidad.siglas
+  %dt
+    %strong
+      = model_class.human_attribute_name(:descripcion)
+      \:
+  %dd= @unidad.descripcion
+  %dt
+    %strong
+      = model_class.human_attribute_name(:direccion)
+      \:
+  %dd= @unidad.direccion
+  %dt
+    %strong
+      = model_class.human_attribute_name(:telefono)
+      \:
+  %dd= @unidad.telefono
+  %dt
+    %strong
+      = model_class.human_attribute_name(:extension)
+      \:
+  %dd= @unidad.extension
+  %dt
+    %strong
+      = model_class.human_attribute_name(:email)
+      \:
+  %dd= @unidad.email
+  %dt
+    %strong
+      = model_class.human_attribute_name(:web)
+      \:
+  %dd= @unidad.web
+  %dt
+    %strong
+      = model_class.human_attribute_name(:escudo)
+      \:
+  %dd= @unidad.escudo
+  %dt
+    %strong
+      = model_class.human_attribute_name(:portada)
+      \:
+  %dd= @unidad.portada
+  %dt
+    %strong
+      = model_class.human_attribute_name(:token)
+      \:
+  %dd= @unidad.token
+= link_to t('.back', :default => t("helpers.links.back")), |
+  unidades_path, :class => 'btn btn-default'               |
+-#
+= link_to t('.edit', :default => t("helpers.links.edit")), |
+  edit_unidad_path(@unidad), :class => 'btn btn-default'   |
+-#
+= link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+  unidad_path(@unidad),                                                                                        |
+  :method => 'delete',                                                                                         |
+  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+  :class => 'btn btn-danger'                                                                                   |

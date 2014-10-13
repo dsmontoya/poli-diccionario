@@ -18,7 +18,7 @@ class UnidadesControllerTest < ActionController::TestCase
 
   test "should create unidad" do
     assert_difference('Unidad.count') do
-      post :create, unidad: { descripcion: @unidad.descripcion, direccion: @unidad.direccion, email: @unidad.email, escudo: @unidad.escudo, extension: @unidad.extension, nombre: @unidad.nombre, portada: @unidad.portada, secure_token: @unidad.secure_token, siglas: @unidad.siglas, telefono: @unidad.telefono, url: @unidad.url, web: @unidad.web }
+      post :create, unidad: { descripcion: @unidad.descripcion, direccion: @unidad.direccion, email: @unidad.email, escudo: @unidad.escudo, extension: @unidad.extension, nombre: @unidad.nombre, portada: @unidad.portada, siglas: @unidad.siglas, telefono: @unidad.telefono, token: @unidad.token, web: @unidad.web }
     end
 
     assert_redirected_to unidad_path(assigns(:unidad))
@@ -35,7 +35,7 @@ class UnidadesControllerTest < ActionController::TestCase
   end
 
   test "should update unidad" do
-    patch :update, id: @unidad, unidad: { descripcion: @unidad.descripcion, direccion: @unidad.direccion, email: @unidad.email, escudo: @unidad.escudo, extension: @unidad.extension, nombre: @unidad.nombre, portada: @unidad.portada, secure_token: @unidad.secure_token, siglas: @unidad.siglas, telefono: @unidad.telefono, url: @unidad.url, web: @unidad.web }
+    patch :update, id: @unidad, unidad: { descripcion: @unidad.descripcion, direccion: @unidad.direccion, email: @unidad.email, escudo: @unidad.escudo, extension: @unidad.extension, nombre: @unidad.nombre, portada: @unidad.portada, siglas: @unidad.siglas, telefono: @unidad.telefono, token: @unidad.token, web: @unidad.web }
     assert_redirected_to unidad_path(assigns(:unidad))
   end
 

@@ -1,5 +1,5 @@
 class UnidadesController < ApplicationController
-  before_action :set_unidad, only: [:show, :edit, :update, :destroy, :agregarCarrera]
+  before_action :set_unidad, only: [:show, :edit, :update, :destroy]
 
   # GET /unidades
   # GET /unidades.json
@@ -61,7 +61,7 @@ class UnidadesController < ApplicationController
     end
   end
   def agregarCarrera
-    @carreras = Carrera.order(:nombre)
+    
   end
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,6 +71,6 @@ class UnidadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unidad_params
-      params.require(:unidad).permit(:nombre, :siglas, :descripcion, :url, :direccion, :telefono, :extension, :email, :web, :escudo, :portada, :token)
+      params.require(:unidad).permit(:nombre, :siglas, :descripcion, :direccion, :telefono, :extension, :email, :web, :escudo, :portada, :token)
     end
 end

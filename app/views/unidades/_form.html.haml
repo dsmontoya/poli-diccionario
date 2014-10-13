@@ -1,0 +1,69 @@
+= form_for @unidad, :html => { :class => "form unidad" } do |f|
+  - if @unidad.errors.any?
+    #error_expl.panel.panel-danger
+      .panel-heading
+        %h3.panel-title
+          = pluralize(@unidad.errors.count, "error")
+          prohibited this unidad from being saved:
+      .panel-body
+        %ul
+          - @unidad.errors.full_messages.each do |msg|
+            %li= msg
+  .form-group
+    = f.label :nombre, :class => 'control-label'
+    .controls
+      = f.text_field :nombre, :class => 'form-control'
+    = error_span(@unidad[:nombre])
+  .control-group
+    = f.label :siglas, :class => 'control-label'
+    .controls
+      = f.text_field :siglas, :class => 'form-control'
+    = error_span(@unidad[:siglas])
+  .control-group
+    = f.label :descripcion, :class => 'control-label'
+    .controls
+      = f.text_area :descripcion, :class => 'form-control'
+    = error_span(@unidad[:descripcion])
+  .control-group
+    = f.label :direccion, :class => 'control-label'
+    .controls
+      = f.text_field :direccion, :class => 'form-control'
+    = error_span(@unidad[:direccion])
+  .control-group
+    = f.label :telefono, :class => 'control-label'
+    .controls
+      = f.text_field :telefono, :class => 'form-control'
+    = error_span(@unidad[:telefono])
+  .control-group
+    = f.label :extension, :class => 'control-label'
+    .controls
+      = f.text_field :extension, :class => 'form-control'
+    = error_span(@unidad[:extension])
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls
+      = f.text_field :email, :class => 'form-control'
+    = error_span(@unidad[:email])
+  .control-group
+    = f.label :web, :class => 'control-label'
+    .controls
+      = f.text_field :web, :class => 'form-control'
+    = error_span(@unidad[:web])
+  .control-group
+    = f.label :escudo, :class => 'control-label'
+    .controls
+      = f.text_field :escudo, :class => 'form-control'
+    = error_span(@unidad[:escudo])
+  .control-group
+    = f.label :portada, :class => 'control-label'
+    .controls
+      = f.text_field :portada, :class => 'form-control'
+    = error_span(@unidad[:portada])
+  .control-group
+    = f.label :token, :class => 'control-label'
+    .controls
+      = f.text_field :token, :class => 'form-control'
+    = error_span(@unidad[:token])
+  = f.submit nil, :class => 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+    unidades_path, :class => 'btn btn-default'                   |

@@ -4,7 +4,6 @@ one:
   nombre: MyString
   siglas: MyString
   descripcion: MyText
-  url: MyString
   direccion: MyString
   telefono: MyString
   extension: MyString
@@ -12,13 +11,12 @@ one:
   web: MyString
   escudo: MyString
   portada: MyString
-  secure_token: MyString
+  token: MyString
 
 two:
   nombre: MyString
   siglas: MyString
   descripcion: MyText
-  url: MyString
   direccion: MyString
   telefono: MyString
   extension: MyString
@@ -26,4 +24,4 @@ two:
   web: MyString
   escudo: MyString
   portada: MyString
-  secure_token: MyString
+  token: MyString

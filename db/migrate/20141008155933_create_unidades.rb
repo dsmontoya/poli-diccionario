@@ -4,7 +4,6 @@ class CreateUnidades < ActiveRecord::Migration
       t.string :nombre
       t.string :siglas
       t.text :descripcion
-      t.string :url
       t.string :direccion
       t.string :telefono
       t.string :extension

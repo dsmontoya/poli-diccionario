@@ -1,0 +1,35 @@
+= form_for(@profesor) do |f|
+  - if @profesor.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@profesor.errors.count, "error")
+        prohibited this profesor from being saved:
+      %ul
+        - @profesor.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :nombres
+    %br/
+    = f.text_field :nombres
+  .field
+    = f.label :apellidos
+    %br/
+    = f.text_field :apellidos
+  .field
+    = f.label :url
+    %br/
+    = f.text_field :url
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :sexo
+    %br/
+    = f.number_field :sexo
+  .field
+    = f.label :token
+    %br/
+    = f.text_field :token
+  .actions
+    = f.submit
