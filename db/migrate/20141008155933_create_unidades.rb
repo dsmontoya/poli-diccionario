@@ -17,3 +17,8 @@ class CreateUnidades < ActiveRecord::Migration
     end
   end
 end
+class CreateCarrerasUnidades < ActiveRecord::Migration
+  def change
+    create_join_table :carreras, :unidades
+  end
+end

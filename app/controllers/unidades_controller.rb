@@ -1,5 +1,5 @@
 class UnidadesController < ApplicationController
-  before_action :set_unidad, only: [:show, :edit, :update, :destroy]
+  before_action :set_unidad, only: [:show, :edit, :update, :destroy, :agregarCarrera]
 
   # GET /unidades
   # GET /unidades.json
@@ -61,7 +61,10 @@ class UnidadesController < ApplicationController
     end
   end
   def agregarCarrera
-    
+    if params[:carrera_id]
+      @carrera = Carrera.find(params[:carrera_id])
+      @unidad.carreras << @carrera
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.

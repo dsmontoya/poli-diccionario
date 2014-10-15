@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'buscar/index'
+
+  get 'buscar/unidades'
+
+  get 'buscar/carrerasJSON'
+
+  get 'buscar/materias'
+
+  get 'buscar/profesores'
+
+  get 'buscar/terminos'
+
   scope "/admin" do
     resources :unidades, :materias, :carreras, :profesores
     get 'unidades/:id/agregarCarrera' => 'unidades#agregarCarrera', :as => 'agregarCarrera'
+    post 'unidades/:id/agregarCarrera/' => 'unidades#agregarCarrera'
     resources :unidades do
     end
     get 'configuracion' => 'info_sitio#index', as: 'info_sitio'

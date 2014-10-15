@@ -1,9 +1,6 @@
-= form_tag @unidad, :html => { :class => "form unidad" } do |f|
-  - Carrera.all.each do |c|
-    .checkbox
-      = label_tag :carrera_id, {:class => "checkbox"} do
-        = check_box :carrera, :id, {:class => "checkbox"}, c.url
-        = c.nombre
+= form_for @unidad, :url => 'agregarCarrera', class: 'form' do |f|
+  .form-group
+    = text_field_tag :carreras, nil, class: 'form-control'
   = submit_tag nil, :class => 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), |
     unidades_path, :class => 'btn btn-default'                   |
